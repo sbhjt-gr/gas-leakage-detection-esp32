@@ -4,7 +4,7 @@ import espnetwork, socket, socketapi, sms
 mq = ADC(Pin(13))
 var = PWM(Pin(26))
 count, n = 0, 1
-blynk_auth = 'epiVQByYt0D1OCyqOSlRFCfaqw4pq-jS'
+blynk_auth = ''
 while True:
         val = mq.read()
         val_ = round(socketapi.map(val, 0, 4095, 0, 1023))
