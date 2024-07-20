@@ -7,9 +7,9 @@ def homepage(request):
     return render(request, "index.html", data)
 
 def leakage(request):
-    leakage_val = requests.get('https://blynk.cloud/external/api/get?token=epiVQByYt0D1OCyqOSlRFCfaqw4pq-jS&a0').json()
+    leakage_val = requests.get('https://blynk.cloud/external/api/get?token=&a0').json()
     return HttpResponse(leakage_val)
 
 def message(request):
-    message = requests.get('https://blynk.cloud/external/api/get?token=epiVQByYt0D1OCyqOSlRFCfaqw4pq-jS&v1').text
+    message = requests.get('https://blynk.cloud/external/api/get?token=&v1').text
     return HttpResponse(message)
