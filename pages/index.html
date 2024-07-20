@@ -1,0 +1,124 @@
+{% extends 'format.html' %}
+{% block content %}
+<body>
+    <div class="p+">
+        <div class="card">
+            <div flex-container="row">
+                <div class="card__img card__img--left" style="height: 130px">
+                    <img src="/s-files/images/gas-icon.webp" alt="">
+                </div>
+                <div flex-item flex-container="column">
+                    <div flex-item>
+                        <div class="p+">
+                            <strong class="fs-headline display-block" id="leakage">Loading...</strong>
+                            <span class="fs-subheading-1 tc-black-2 display-block">Current Gas Leakage Value ⛽</span>
+                                <div class="paragraph fs-body-1 mt+">
+
+                                        <span class="fs-title display-block mb">Current values:</span>
+                                                <li class="list-row list-row--has-separator">
+                                                    <div class="list-row__primary">
+                                                        <i class="icon mdi ng-isolate-scope mdi-gas-cylinder icon--l icon--green icon--circled"></i>
+                                                    </div>
+                                    
+                                                    <div class="list-row__content">
+                                                        <span id="leak_level"><b>Leakage Level: </b>Loading...</span>
+                                                    </div>
+                                                </li>   
+                                                <li class="list-row list-row--has-separator">
+                                                    <div class="list-row__primary">
+                                                        <i class="icon mdi ng-isolate-scope mdi-message-processing icon--l icon--red icon--circled"></i>
+                                                    </div>
+                                    
+                                                    <div class="list-row__content">
+                                                        <span id="sms_stat"><b>SMS Status:</b> Loading...</span>
+                                                    </div>
+                                                </li>
+                                                <li class="list-row list-row--has-separator">
+                                                    <div class="list-row__primary">
+                                                        <i class="icon mdi ng-isolate-scope mdi-whatsapp icon--l icon--blue icon--circled"></i>
+                                                    </div>
+                                    
+                                                    <div class="list-row__content">
+                                                        <span id="wa_stat"><b>WhatsApp Message Status:</b> Loading...</span>
+                                                    </div>
+                                                </li>
+                                                <li class="list-row list-row--has-separator">
+                                                    <div class="list-row__primary">
+                                                        <i class="icon mdi ng-isolate-scope mdi-telegram icon--l icon--blue icon--circled"></i>
+                                                    </div>
+                                    
+                                                    <div class="list-row__content">
+                                                        <span id="tg_stat"><b>Telegram Call Status:</b> Loading...</span>
+                                                    </div>
+                                                </li>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="card__actions">
+                        <div class="switch switch--red switch--left ng-not-empty ng-valid switch--theme-light">
+                            <input id="stopper" type="checkbox" class="switch__input ng-pristine ng-untouched ng-valid ng-not-empty" onclick="stop()"><label for="stopper" class="switch__label ng-scope" id="stop_text">Stop the count</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<subhajit>...</subhajit>
+
+<script>
+
+var author = document.getElementsByTagName('subhajit')[0];
+author.innerHTML = 'Web Application by <b>Subhajit Gorai</b>';
+author.style.fontStyle = "italic";
+author.style.fontSize = "10px";
+
+var s = setInterval(leakage_value, 1000);
+var audio = new Audio("/s-files/alert.mp3");
+var count = 0;
+var n = 1;
+
+function leakage_value() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET","/leakage_value");
+    xhttp.onload = loaded;
+    function loaded() {
+        document.getElementById("leakage").innerHTML = this.responseText;
+        if(this.responseText >= 100) {
+            count += 1;
+            audio.play();
+            document.getElementById("leak_level").innerHTML = '<b>Leakage Level: </b> High!   <i class="icon mdi ng-isolate-scope mdi-skull-crossbones icon--red icon--circled" style="font-size:20px"></i>';
+            if (count >= 5 && n) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET","/message");
+                xhttp.onload = function() {
+                    document.getElementById("sms_stat").innerHTML = "<b>SMS Status:</b> " + this.responseText;
+                    document.getElementById("wa_stat").innerHTML = "<b>WhatsApp Message Status:</b> Message request attempted!";
+                    document.getElementById("tg_stat").innerHTML = "<b>Telegram Call Status:</b> Call requested!";
+                }
+                xhttp.send();
+                n = 0;
+            }
+        } else {
+            document.getElementById("leak_level").innerHTML = "<b>Leakage Level: </b> Safe!";
+            document.getElementById("sms_stat").innerHTML = "<b>SMS Status:</b> Not sent!";
+            document.getElementById("wa_stat").innerHTML = "<b>WhatsApp Message Status:</b> Not sent!";
+            document.getElementById("tg_stat").innerHTML = "<b>Telegram Call Status:</b> No call attempt!";
+        }
+    }
+    xhttp.send();
+
+} function stop() {
+    var checkBox = document.getElementById("stopper");
+    if (checkBox.checked == true) {
+        document.getElementById("stop_text").innerHTML = "Currently stopped!";
+        clearInterval(s);
+    } else {
+        document.getElementById("stop_text").innerHTML = "Stop the count";
+        s = setInterval(leakage_value, 1000);
+    }
+}
+
+</script>
+
+</body>
+{% endblock %}

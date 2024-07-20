@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Framework Used: LumX -->
+    <link rel="stylesheet" href="/s-files/lumx/lumx.css">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+    <script src="/s-files/lumx/libs/jquery/dist/jquery.js"></script>
+    <script src="/s-files/lumx/libs/velocity-animate/velocity.js"></script>
+    <script src="/s-files/lumx/libs/moment/min/moment-with-locales.js"></script>
+    <script src="/s-files/lumx/libs/angular/angular.js"></script>
+    <script src="/s-files/lumx/libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+    <script src="/s-files/lumx/libs/angular-highlightjs/angular-highlightjs.min.js"></script>
+    <script src="/s-files/lumx/js/lumx.js"></script>
+    <script src="/s-files/lumx/s-files/lumx/app.js"></script>
+    <script src="/s-files/lumx/js/demo/layout/js/layout_service.js"></script>
+    <script src="/s-files/lumx/js/demo/main-nav/js/main-nav_directive.js"></script>
+    <script src="/s-files/lumx/js/demo/main-nav/js/main-nav-link_directive.js"></script>
+    <script src="/s-files/lumx/js/demo/component/js/component_directive.js"></script>
+    <script src="/s-files/lumx/js/button/button_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/button_template.js"></script>
+    <script src="/s-files/lumx/js/checkbox/demo/demo-checkbox_controller.js"></script>
+    <script src="/s-files/lumx/js/checkbox/checkbox_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/checkbox_template.js"></script>
+    <script src="/s-files/lumx/js/data-table/demo/demo-data-table_controller.js"></script>
+    <script src="/s-files/lumx/js/data-table/data-table_service.js"></script>
+    <script src="/s-files/lumx/js/data-table/data-table_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/data-table_template.js"></script>
+    <script src="/s-files/lumx/js/date-picker/demo/demo-date-picker_controller.js"></script>
+    <script src="/s-files/lumx/js/date-picker/date-picker_service.js"></script>
+    <script src="/s-files/lumx/js/date-picker/date-picker_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/date-picker_template.js"></script>
+    <script src="/s-files/lumx/js/dialog/demo/demo-dialog_controller.js"></script>
+    <script src="/s-files/lumx/js/dialog/dialog_service.js"></script>
+    <script src="/s-files/lumx/js/dialog/dialog_directive.js"></script>
+    <script src="/s-files/lumx/js/dropdown/demo/demo-dropdown_controller.js"></script>
+    <script src="/s-files/lumx/js/dropdown/dropdown_service.js"></script>
+    <script src="/s-files/lumx/js/dropdown/dropdown_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/dropdown_template.js"></script>
+    <script src="/s-files/lumx/js/fab/fab_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/fab_template.js"></script>
+    <script src="/s-files/lumx/js/file-input/demo/demo-file-input_controller.js"></script>
+    <script src="/s-files/lumx/js/file-input/file-input_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/file-input_template.js"></script>
+    <script src="/s-files/lumx/js/icon/icon_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/icon_template.js"></script>
+    <script src="/s-files/lumx/js/notification/demo/demo-notification_controller.js"></script>
+    <script src="/s-files/lumx/js/notification/notification_service.js"></script>
+    <script src="/s-files/lumx/js/progress/demo/demo-progress_controller.js"></script>
+    <script src="/s-files/lumx/js/progress/progress_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/progress_template.js"></script>
+    <script src="/s-files/lumx/js/radio-button/demo/demo-radio-button_controller.js"></script>
+    <script src="/s-files/lumx/js/radio-button/radio-button_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/radio-button_template.js"></script>
+    <script src="/s-files/lumx/js/ripple/ripple_directive.js"></script>
+    <script src="/s-files/lumx/js/search-filter/demo/demo-search-filter_controller.js"></script>
+    <script src="/s-files/lumx/js/search-filter/search-filter_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/search-filter_template.js"></script>
+    <script src="/s-files/lumx/js/select/demo/demo-select_controller.js"></script>
+    <script src="/s-files/lumx/js/select/select_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/select_template.js"></script>
+    <script src="/s-files/lumx/js/stepper/demo/demo-stepper_controller.js"></script>
+    <script src="/s-files/lumx/js/stepper/stepper_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/stepper_template.js"></script>
+    <script src="/s-files/lumx/js/switch/demo/demo-switch_controller.js"></script>
+    <script src="/s-files/lumx/js/switch/switch_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/switch_template.js"></script>
+    <script src="/s-files/lumx/js/tabs/demo/demo-tabs_controller.js"></script>
+    <script src="/s-files/lumx/js/tabs/tabs_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/tabs_template.js"></script>
+    <script src="/s-files/lumx/js/text-field/demo/demo-text-field_controller.js"></script>
+    <script src="/s-files/lumx/js/text-field/text-field_directive.js"></script>
+    <script src="/s-files/lumx/js/templates/text-field_template.js"></script>
+    <script src="/s-files/lumx/js/tooltip/tooltip_directive.js"></script>
+    <script src="/s-files/lumx/js/utils/depth_service.js"></script>
+    <script src="/s-files/lumx/js/utils/event-scheduler_service.js"></script>
+    <script src="/s-files/lumx/js/utils/transclude-replace_directive.js"></script>
+    <script src="/s-files/lumx/js/utils/utils_service.js"></script>
+    <script src="/s-files/lumx/js/utils/misc.js"></script> -->
+
+<title>{{title}}</title>
+</head>
