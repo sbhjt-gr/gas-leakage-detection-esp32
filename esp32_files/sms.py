@@ -4,7 +4,7 @@ def sms(gas_val):
     message = "Alert!! Gas Leakage Detected! Current Leakage Value: "
     payload = f"sender_id=TXTIND&message={message}{gas_val}&route=v3&numbers=7047179573"
     headers = {
-        'authorization': "91AYZqcfougRDGkW2EvsBXhiQ8CJdUM0OVxLeNlr4T37apjzHb2ITDdyFiRLHlqprUgQ9J86hSW3C5Y1",
+        'authorization': "",
         'Content-Type': "application/x-www-form-urlencoded",
         'Cache-Control': "no-cache",
         }
