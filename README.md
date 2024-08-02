@@ -82,6 +82,10 @@ This project provides a comprehensive solution for detecting gas leakage using a
 - **Web Monitoring:** Monitor gas levels and receive alerts via the web application.
 - **Audio Alerts:** The web application plays an audio alert (`alert.mp3`) when gas leakage is detected.
 
+- ## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
