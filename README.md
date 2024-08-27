@@ -25,7 +25,6 @@ This project provides a comprehensive solution for detecting gas leakage using a
     - `urls.py`
     - `views.py`
     - `wsgi.py`
-    - `__pycache__/`: Compiled Python files.
   - `manage.py`: Django management script.
   - **pages/**: Contains HTML templates for the web application.
     - `footer.html`
