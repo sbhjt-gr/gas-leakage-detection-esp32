@@ -87,17 +87,12 @@ This project provides a comprehensive solution for detecting gas leakage using a
 - **Web Monitoring:** Monitor gas levels and receive alerts via the web application.
 - **Audio Alerts:** The web application plays an audio alert (`alert.mp3`) when gas leakage is detected.
 
-- ## Contributing
-
-Contributions are fine!
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
-- Thanks to the developers of the ESP32 and Django for providing excellent frameworks.
 - Thanks to the creators of LumX for the frontend framework used in this project.
 
 ## Contact
